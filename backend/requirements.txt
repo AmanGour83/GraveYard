@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+sqlalchemy
+docker
+pydantic
+python-multipart

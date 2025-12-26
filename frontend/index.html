@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grave Yard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <aside>
+            <div class="brand">
+                <span>⚰️</span> Grave Yard
+            </div>
+            
+            <nav>
+                <button onclick="nav('home')" class="nav-btn active" id="btn-home">Home</button>
+                <button onclick="nav('showcase')" class="nav-btn" id="btn-showcase">Projects</button>
+                <button onclick="nav('upload')" class="nav-btn" id="btn-upload">Dig Grave</button>
+            </nav>
+
+            <div class="user-profile">
+                <div style="font-family: 'Special Elite', cursive; color: var(--text-muted);">
+                    Created by <br>
+                    <span style="color: var(--accent-green); font-size: 1.2rem; font-weight: bold;">
+                        Quantum Breaker
+                    </span>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            
+            <div id="home" class="section active">
+                <div class="hero-box">
+                    <h1>Welcome to the Grave Yard</h1>
+                    <p style="font-size: 1.1rem; color: var(--text-muted);">
+                        A place to unearth abandoned student projects and give them new life.
+                        <br><br>
+                        Browse the projects below to find unique solutions. MNC Scouts can request access to private repositories.
+                    </p>
+                    <button onclick="nav('showcase')" class="btn">Start Digging</button>
+                </div>
+            </div>
+
+            <div id="showcase" class="section">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 30px;">
+                    <h2>Project Showcase</h2>
+                    <input type="text" placeholder="Search graves..." style="width: 300px; margin-bottom:0;">
+                </div>
+                <div id="project-grid" class="grid">
+                    <p>Loading graves...</p>
+                </div>
+            </div>
+
+            <div id="upload" class="section">
+                <h2>Dig a New Grave (Upload)</h2>
+                <div class="hero-box" style="max-width: 600px;">
+                    <label>Project Name</label>
+                    <input type="text" id="p-name" placeholder="e.g. Optimized Sorting Algo">
+
+                    <label>Description (The Epitaph)</label>
+                    <textarea id="p-desc" rows="4" placeholder="What was this project meant to be?"></textarea>
+
+                    <label>Docker Image</label>
+                    <input type="text" id="p-image" placeholder="e.g. nginxdemos/hello">
+
+                    <label>Internal Port</label>
+                    <input type="number" id="p-port" value="80">
+
+                    <button onclick="submitProject()" class="btn" style="width: 100%;">Bury Project</button>
+                    <p id="upload-status" style="margin-top:10px; text-align:center;"></p>
+                </div>
+            </div>
+
+            <div id="details" class="section">
+                <button onclick="nav('showcase')" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-family:'Special Elite'; margin-bottom:20px;">← Back to Graveyard</button>
+                <div id="detail-content"></div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
